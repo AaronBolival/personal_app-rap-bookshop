@@ -1,0 +1,76 @@
+managed implementation in class zbp_i_aj_authors unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZI_AJ_AUTHORS alias _AuthorsBDEF
+persistent table zaj_tbl_authors
+draft table zaj_dtbl_authors
+lock master total etag Lastchangedat
+authorization master ( instance )
+etag master Lastchangedat
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( numbering : managed, readonly ) AuthorId;
+  field ( mandatory ) AuthorName;
+  field ( readonly ) CreatedAt, CreatedBy, Lastchangedat, Lastchangedby;
+
+  draft action Edit;
+  draft action Resume;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+
+//  action ( features : instance ) enableSellToggle result[1] $self;
+
+  association _Books { create; with draft; }
+
+
+
+  mapping for zaj_tbl_authors
+    {
+      AuthorId      = AuthorId;
+      AuthorName    = AuthorName;
+      CreatedAt     = CreatedAt;
+      CreatedBy     = CreatedBy;
+      Lastchangedat = Lastchangedat;
+      Lastchangedby = Lastchangedby;
+    }
+
+}
+
+define behavior for ZI_AJ_BOOKS alias _BooksBDEF
+persistent table zaj_tbl_books
+draft table zaj_dtbl_books
+lock dependent by _Authors
+authorization dependent by _Authors
+etag master Lastchangedat
+{
+
+  update;
+  delete;
+  field (numbering : managed, readonly : update ) Bookid;
+  field ( mandatory ) Genreid, Title, Stock, Price;
+  field ( readonly ) Authorid, CreatedAt, CreatedBy, Lastchangedat, Lastchangedby;
+
+  association _Authors { with draft; }
+
+  mapping for zaj_tbl_books
+    {
+      Bookid        = bookid;
+      Authorid      = authorid;
+      Genreid       = genreid;
+      Title         = title;
+      Description   = description;
+      Stock         = stock;
+      Price         = price;
+      Currency      = currency;
+      ImgLink       = img_link;
+      CreatedAt     = createdat;
+      CreatedBy     = createdby;
+      Lastchangedat = lastchangedat;
+      Lastchangedby = lastchangedby;
+    }
+
+}

@@ -1,0 +1,33 @@
+projection;
+strict ( 2 );
+use draft;
+
+define behavior for ZC_AJ_AUTHORS alias AuthorsBDEFP
+use etag
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Resume;
+  use action Activate;
+  use action Discard;
+  use action Prepare;
+
+//  use action enableSellToggle;
+
+
+  use association _Books { create; with draft; }
+
+}
+
+define behavior for ZC_AJ_BOOKS alias BooksBDEFP
+use etag
+{
+
+    use update;
+    use delete;
+
+    use association _Authors { with draft; }
+}

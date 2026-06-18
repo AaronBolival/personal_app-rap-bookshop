@@ -1,0 +1,57 @@
+@Metadata.layer: #CORE
+
+@UI.headerInfo: {
+    typeName: 'Currency',
+    typeNamePlural: 'Currencies'
+}
+annotate entity ZC_AJ_CUKIES with
+{
+  @UI.facet: [{ id: 'CurrencyID', label: 'Currency', purpose: #STANDARD, type:#IDENTIFICATION_REFERENCE, position: 10 }]
+
+  @UI.lineItem: [{ position: 10, label: 'Code' }]
+  @UI.identification: [{ position: 10 }]
+  @EndUserText.label: 'Code'
+  CurrencyID;
+
+  @UI.lineItem: [{ position: 20, label: 'Locale' }]
+  @UI.identification: [{ position: 20 }]
+  @EndUserText.label: 'Locale'
+  Locale;
+
+  @UI.lineItem: [{ position: 30, label: 'Currency Name' }]
+  @UI.identification: [{ position: 30 }]
+  @EndUserText.label: 'Currency Name'
+  CurrencyName;
+
+
+  @UI.lineItem: [{ position: 40, label: 'Currency Symbol' }]
+  @EndUserText.label: 'Currency Name'
+  CurrencySymbol;
+
+  @UI.lineItem: [{ position: 50, label: 'Description' }]
+  @UI.identification: [{ position: 50}]
+  @EndUserText.label: 'Description'
+  Description;
+
+  @UI.lineItem: [{ position: 60, label: 'CreatedAt' }]
+  @UI.identification: [{ position: 60 }]
+  @EndUserText.label: 'CreatedAt'
+  CreatedAt;
+
+  @UI.lineItem: [{ position: 70, label: 'CreatedBy' }]
+  @UI.identification: [{ position: 70 }]
+  @EndUserText.label: 'Author ID'
+  CreatedBy;
+
+  @UI.lineItem: [{ position: 80, label: 'LastChangedAt' }]
+  @UI.identification: [{ position: 80 }]
+  @EndUserText.label: 'LastChangedAt'
+
+  LastChangedAt;
+
+  @UI.lineItem: [{ position: 90, label: 'LastChangedBy' }]
+  @UI.identification: [{ position: 90 }]
+  @EndUserText.label: 'LastChangedBy'
+  LastChandedBy;
+
+}

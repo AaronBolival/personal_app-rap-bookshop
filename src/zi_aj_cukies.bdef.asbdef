@@ -1,0 +1,40 @@
+managed implementation in class zbp_i_aj_cukies unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZI_AJ_CUKIES alias CurrencyBDEF
+persistent table zaj_tbl_cukies
+draft table zaj_dtbl_cukies
+lock master total etag lastchangedat
+authorization master ( instance )
+etag master lastchangedat
+{
+  create ( authorization : global );
+  update;
+  delete;
+
+  field ( numbering : managed, readonly ) curr_uuid;
+  field ( readonly ) createdat, createdby, lastchangedat, lastchangedby;
+
+  draft action Edit;
+  draft action Resume;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare{
+    validation allowedCurrencies;
+  }
+
+  validation allowedCurrencies on save { field currencyname; create; update; }
+
+  mapping for zaj_tbl_cukies
+    {
+      curr_uuid     = curr_uuid;
+      locale        = locale;
+      currencyname  = currencyname;
+      description   = description;
+      createdat     = createdat;
+      createdby     = createdby;
+      lastchangedat = lastchangedat;
+      lastchangedby = lastchangedby;
+    }
+}

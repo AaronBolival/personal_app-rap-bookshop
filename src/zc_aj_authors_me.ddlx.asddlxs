@@ -1,0 +1,64 @@
+@Metadata.layer: #CORE
+
+@UI.headerInfo: {
+    typeName: 'Author',
+    typeNamePlural: 'Authors',
+    title: { value: 'AuthorName' },
+    description: { value: 'AuthorId' }
+}
+annotate entity ZC_AJ_AUTHORS with
+{
+
+  @UI.facet: [
+    {
+      id: 'headerTile1',
+      purpose: #HEADER,
+      position: 10,
+      isPartOfPreview: true,
+      type: #DATAPOINT_REFERENCE ,
+      targetQualifier: 'headerTileQualifier1' 
+    },
+    { id: 'AuthorId', label: 'Author', purpose: #STANDARD, type:#IDENTIFICATION_REFERENCE, position: 10 },
+    { id: 'BookId', label: 'Book', purpose: #STANDARD, type: #LINEITEM_REFERENCE, position: 20, targetElement: '_Books', importance: #HIGH }
+  ]
+
+  @UI.lineItem: [{ position: 10, label: 'Author ID' }]
+  @UI.identification: [{ position: 10, value: 'AuthorId' }]
+  @EndUserText.label: 'Author ID'
+  AuthorId;
+
+  @UI.lineItem: [{ position: 20, label: 'Author Name' }]
+  @UI.identification: [{ position: 20, value: 'AuthorName' }]
+  @EndUserText.label: 'Author Name'
+  AuthorName;
+  
+  @UI.lineItem: [{ position: 30, label: 'Total Books' }]
+  @EndUserText.label: 'Total Books'
+  @UI.dataPoint: { qualifier: 'headerTileQualifier1', title: 'Total Books' }
+  AuthorBooksCount;
+
+  @UI.lineItem: [{ position: 40, label: 'Created At' }]
+  @UI.identification: [{ position: 40, value: 'CreatedAt' }]
+  @UI.hidden: true
+  @EndUserText.label: 'Created At'
+  CreatedAt;
+
+  @UI.lineItem: [{ position: 50, label: 'Created By' }]
+  @UI.identification: [{ position: 50, value: 'CreatedBy' }]
+  @UI.hidden: true
+  @EndUserText.label: 'Created By'
+  CreatedBy;
+
+  @UI.lineItem: [{ position: 60, label: 'Last Changed At' }]
+  @UI.identification: [{ position: 60, value: 'Lastchangedat' }]
+  @UI.hidden: true
+  @EndUserText.label: 'Last Changed At'
+  Lastchangedat;
+
+  @UI.lineItem: [{ position: 70, label: 'Last Changed By' }]
+  @UI.identification: [{ position: 70, value: 'Lastchangedby' }]
+  @UI.hidden: true
+  @EndUserText.label: 'Last Changed By'
+  Lastchangedby;
+
+}

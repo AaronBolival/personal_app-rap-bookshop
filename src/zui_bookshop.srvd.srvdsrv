@@ -1,0 +1,9 @@
+@EndUserText.label: 'Expose Bookshop'
+define service ZUI_BOOKSHOP {
+  expose ZC_AJ_AUTHORS     as Authors;
+  expose ZC_AJ_BOOKS       as Books;
+  expose ZC_AJ_CUKIES      as Currencies;
+  expose ZC_AJ_GENRES      as Genres;
+  expose ZC_AJ_PURCH       as Purchases;
+  expose ZI_AJ_BOOKS_COUNT as TotalBooksPerAuthor;
+}

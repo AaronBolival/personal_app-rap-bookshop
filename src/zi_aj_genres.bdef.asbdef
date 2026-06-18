@@ -1,0 +1,34 @@
+managed implementation in class zbp_i_aj_genres unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZI_AJ_GENRES //alias <alias_name>
+persistent table zaj_tbl_genres
+draft table zaj_dtbl_genres
+lock master total etag Lastchangedat
+authorization master ( instance )
+etag master Lastchangedat
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( numbering : managed, readonly ) Genreid;
+
+  draft action Edit;
+  draft action Resume;
+  draft action Discard;
+  draft action Activate optimized;
+  draft determine action Prepare;
+
+  mapping for zaj_tbl_genres
+    {
+      Genreid       = genreid;
+      Locale        = locale;
+      GenreName     = genre_name;
+      Description   = description;
+      CreatedAt     = createdat;
+      CreatedBy     = createdby;
+      Lastchangedat = lastchangedat;
+      Lastchangedby = lastchangedby;
+    }
+}

@@ -1,0 +1,41 @@
+@Metadata.layer: #CORE
+
+@UI.headerInfo: {
+    typeName: 'Genre',
+    typeNamePlural: 'Genres'
+}
+annotate entity ZC_AJ_GENRES
+    with 
+{   
+    @UI.facet: [{ id: 'Genreid', position: 10, purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE, label: 'Genre' }]
+
+    @UI.lineItem: [{ position: 10, label: 'Genre ID' }]
+    @UI.identification: [{ position: 10 }]
+    @EndUserText.label: 'Genre ID'
+    Genreid;
+    
+    @UI.lineItem: [{ position: 30, label: 'Locale' }]
+    @UI.identification: [{ position: 20 }]
+    @EndUserText.label: 'Locale'    
+    Locale;
+    
+    @UI.lineItem: [{ position: 30, label: 'Genre Name' }]
+    @UI.identification: [{ position: 30 }]
+    @EndUserText.label: 'Genre Name'    
+    GenreName;
+    
+    @UI.lineItem: [{ position: 40, label: 'Description' }]
+    @UI.identification: [{ position: 40 }]
+    @EndUserText.label: 'Description'    
+    Description;
+    
+    @UI.hidden: true   
+    CreatedAt;
+    @UI.hidden: true   
+    CreatedBy;
+    @UI.hidden: true   
+    Lastchangedat;
+    @UI.hidden: true   
+    Lastchangedby;
+    
+}
