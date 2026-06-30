@@ -11,6 +11,7 @@ define view entity ZC_AJ_BOOKS
       @ObjectModel.text.element: ['GenreName']
       Genreid,
       _Genres.GenreName,
+      AuthorName,
       Title,
       Description,
       Stock,

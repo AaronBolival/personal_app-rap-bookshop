@@ -15,6 +15,7 @@ define view entity ZI_AJ_BOOKS
   key bookid        as Bookid,
   key authorid      as Authorid,
       genreid       as Genreid,
+      _Authors.AuthorName as AuthorName,
       title         as Title,
       description   as Description,
       stock         as Stock,

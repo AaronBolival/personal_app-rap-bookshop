@@ -3,9 +3,16 @@
 @Metadata.ignorePropagatedAnnotations: true
 define root view entity ZI_AJ_PURCH
   as select from zaj_tbl_purhc
+  association[1..1] to ZI_AJ_BOOKS as _Books
+    on $projection.Bookid = _Books.Bookid
+   and $projection.Authorid = _Books.Authorid
 {
-  key custid        as Custid,
-  key bookid        as Bookid,
+  key orderid       as Orderid,
+  key itemno        as Itemno,
+      authorid      as Authorid,
+      custid        as Custid,
+      bookid        as Bookid,
+      _Books.Title  as BookTitle,
       custname      as Custname,
       total_item    as TotalItem,
       price         as Price,
@@ -18,5 +25,10 @@ define root view entity ZI_AJ_PURCH
       createdat     as Createdat,
       createdby     as Createdby,
       lastchangedat as Lastchangedat,
-      lastchangedby as Lastchangedby
+      lastchangedby as Lastchangedby,
+      
+      _Books.ImgLink as ImageLink,
+      
+      /* Association */
+      _Books
 }

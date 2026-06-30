@@ -1,0 +1,51 @@
+managed implementation in class zbp_i_aj_purch unique;
+strict ( 2 );
+
+define behavior for ZI_AJ_PURCH //alias <alias_name>
+persistent table zaj_tbl_purhc
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( numbering : managed ) Orderid;
+  field ( readonly : update ) Itemno;
+
+  field ( readonly ) Createdby, Createdat, Lastchangedby, Lastchangedat;
+
+
+//  action ChangeStatus result[1] $self; "declaration for custom button
+  action ( features : instance ) ChangeStatus result[1] $self; // change into this to allow disabling the button if status already in final status
+  action ( features : instance ) ChangeStatusAutoAccept result[1] $self;
+
+  validation validateCustname on save { create; update; field Custname; }
+
+
+  determination setOrderDefaults on modify { create; }
+  validation validateOverall on save { create; update; } // This method is like create_deep_entity
+
+  association _Books; // association in root view/interface must have the complete keys of books to use this
+
+  mapping for zaj_tbl_purhc corresponding
+    {
+      Orderid       = orderid;
+      Itemno        = itemno;
+      Custid        = custid;
+      Bookid        = bookid;
+      Custname      = custname;
+      TotalItem     = total_item;
+      Price         = price;
+      Currency      = currency;
+      OrderDate     = order_date;
+      OrderTime     = order_time;
+      DeliveryDate  = delivery_date;
+      DeliveryTime  = delivery_time;
+      Status        = status;
+      Createdat     = createdat;
+      Createdby     = createdby;
+      Lastchangedat = lastchangedat;
+      Lastchangedby = lastchangedby;
+    }
+}

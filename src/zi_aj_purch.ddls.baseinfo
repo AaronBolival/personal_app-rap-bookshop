@@ -3,10 +3,13 @@
 {
 "FROM":
 [
+"ZI_AJ_BOOKS",
 "ZAJ_TBL_PURHC"
 ],
 "ASSOCIATED":
-[],
+[
+"ZI_AJ_BOOKS"
+],
 "BASE":
 [],
 "ANNO_REF":

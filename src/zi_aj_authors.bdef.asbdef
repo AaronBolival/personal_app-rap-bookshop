@@ -67,6 +67,7 @@ etag master Lastchangedat
       Price         = price;
       Currency      = currency;
       ImgLink       = img_link;
+      Featured      = featured;
       CreatedAt     = createdat;
       CreatedBy     = createdby;
       Lastchangedat = lastchangedat;

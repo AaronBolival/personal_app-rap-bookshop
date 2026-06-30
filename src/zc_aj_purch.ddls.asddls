@@ -3,11 +3,16 @@
 @EndUserText.label: 'List of Purchases'
 @Metadata.ignorePropagatedAnnotations: true
 @Metadata.allowExtensions: true
-define root view entity ZC_AJ_PURCH provider contract transactional_query
+define root view entity ZC_AJ_PURCH
+  provider contract transactional_query
   as projection on ZI_AJ_PURCH
 {
-  key Custid,
-  key Bookid,
+  key Orderid,
+  key Itemno,
+      Authorid,
+      Custid,
+      Bookid,
+      BookTitle,
       Custname,
       TotalItem,
       Price,
@@ -20,5 +25,6 @@ define root view entity ZC_AJ_PURCH provider contract transactional_query
       Createdat,
       Createdby,
       Lastchangedat,
-      Lastchangedby
+      Lastchangedby,
+      ImageLink
 }

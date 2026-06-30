@@ -3,6 +3,7 @@
 {
 "FROM":
 [
+"ZI_AJ_AUTHORS",
 "ZI_AJ_CUKIES",
 "ZAJ_TBL_BOOKS"
 ],

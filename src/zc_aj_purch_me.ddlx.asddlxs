@@ -2,78 +2,117 @@
 annotate entity ZC_AJ_PURCH
     with 
 {
-    @UI.lineItem: [{ position: 10, label: 'Customer ID' }]
-    @UI.identification: [{ position: 10  }]
+
+    @UI.lineItem: [
+    { position: 10, label: 'Order ID' },
+    { 
+//    To create a custom button in fiori app
+        type: #FOR_ACTION,
+        dataAction: 'ChangeStatus',
+        label: 'Approve',
+        position: 20 
+    } 
+    ]
+    @UI.identification: [
+    { position: 10  },    
+    { 
+//    To create a custom button in fiori app
+        type: #FOR_ACTION,
+        dataAction: 'ChangeStatus',
+        label: 'Approve',
+        position: 10 
+    } 
+    ]
+    @EndUserText.label: 'Order ID'  
+    Orderid;
+
+    @UI.lineItem: [ { position: 20, label: 'Item No' } ]    
+    @UI.identification: [{ position: 20 }]
+    @EndUserText.label: 'Item No.'  
+    Itemno;
+    
+    @UI.lineItem: [{ position: 30, label: 'Author ID', hidden: true }]
+    @UI.identification: [{ position: 30  }]
+    @EndUserText.label: 'Author ID'  
+    Authorid;
+        
+    @UI.lineItem: [{ position: 40, label: 'Customer ID', hidden: true }]
+    @UI.identification: [{ position: 40  }]
     @EndUserText.label: 'Customer ID'  
     Custid;
 
-    @UI.lineItem: [{ position: 20, label: 'Book ID' }]
-    @UI.identification: [{ position: 20  }]
+    @UI.lineItem: [{ position: 50, label: 'Book ID', hidden: true }]
+    @UI.identification: [{ position: 50  }]
     @EndUserText.label: 'Book ID'      
     Bookid;
     
-    @UI.lineItem: [{ position: 30, label: 'Customer Name' }]
-    @UI.identification: [{ position: 10   }]
+    @UI.lineItem: [{ position: 60, label: 'Book Title' }]
+    @UI.identification: [{ position: 60  }]
+    @EndUserText.label: 'Book Title'      
+    BookTitle;   
+    
+    @UI.lineItem: [{ position: 70, label: 'Customer Name' }]
+    @UI.identification: [{ position: 70   }]
     @EndUserText.label: 'Customer Name'     
     Custname;
     
-    @UI.lineItem: [{ position: 40, label: 'Total Item' }]
-    @UI.identification: [{ position: 40 }]
+    @UI.lineItem: [{ position: 80, label: 'Total Item' }]
+    @UI.identification: [{ position: 80 }]
     @EndUserText.label: 'Total Item'      
     TotalItem;
 
-    @UI.lineItem: [{ position: 50, label: 'Price' }]
-    @UI.identification: [{ position: 50 }]
+    @UI.lineItem: [{ position: 90, label: 'Price' }]
+    @UI.identification: [{ position: 90 }]
     @EndUserText.label: 'Price'          
     Price;
     
-    @UI.lineItem: [{ position: 60, label: 'Currency' }]
-    @UI.identification: [{ position: 60 }]
+    @UI.lineItem: [{ position: 100, label: 'Currency' }]
+    @UI.identification: [{ position: 100 }]
     @EndUserText.label: 'Currency'          
     Currency;
     
-    @UI.lineItem: [{ position: 70, label: 'Order Date' }]
-    @UI.identification: [{ position: 70 }]
+    @UI.lineItem: [{ position: 110, label: 'Order Date' }]
+    @UI.identification: [{ position: 110 }]
     @EndUserText.label: 'Order Date'          
     OrderDate;
     
-    @UI.lineItem: [{ position: 80, label: 'Order Time' }]
-    @UI.identification: [{ position: 80 }]
+    @UI.lineItem: [{ position: 120, label: 'Order Time' }]
+    @UI.identification: [{ position: 120 }]
     @EndUserText.label: 'Order Time'          
     OrderTime;
     
-    @UI.lineItem: [{ position: 90, label: 'Delivery Date' }]
-    @UI.identification: [{ position: 90 }]
+    @UI.lineItem: [{ position: 130, label: 'Delivery Date' }]
+    @UI.identification: [{ position: 130 }]
     @EndUserText.label: 'Delivery Date'          
     DeliveryDate;
     
-    @UI.lineItem: [{ position: 100, label: 'Deliverey Time' }]
-    @UI.identification: [{ position: 100 }]
+    @UI.lineItem: [{ position: 140, label: 'Deliverey Time' }]
+    @UI.identification: [{ position: 140 }]
     @EndUserText.label: 'Delivery Time'          
     DeliveryTime;
     
-    @UI.lineItem: [{ position: 110, label: 'Status' }]
-    @UI.identification: [{ position: 110 }]
+    @UI.lineItem: [{ position: 150, label: 'Status' }]
+    @UI.identification: [{ position: 150 }]
     @EndUserText.label: 'Status'          
     Status;
     
-    @UI.lineItem: [{ position: 120, label: 'Created At' }]
-    @UI.identification: [{ position: 120 }]
+    @UI.lineItem: [{ position: 160, label: 'Created At' }]
+    @UI.identification: [{ position: 160 }]
     @EndUserText.label: 'Created At'          
     Createdat;
     
-    @UI.lineItem: [{ position: 130, label: 'Created By' }]
-    @UI.identification: [{ position: 130 }]
+    @UI.lineItem: [{ position: 170, label: 'Created By' }]
+    @UI.identification: [{ position: 170 }]
     @EndUserText.label: 'Created By'          
     Createdby;
     
-    @UI.lineItem: [{ position: 140, label: 'Last Changed At' }]
-    @UI.identification: [{ position: 140 }]
+    @UI.lineItem: [{ position: 180, label: 'Last Changed At' }]
+    @UI.identification: [{ position: 180 }]
     @EndUserText.label: 'Last Changed At'          
     Lastchangedat;
     
-    @UI.lineItem: [{ position: 150, label: 'Last Changed By' }]
-    @UI.identification: [{ position: 150 }]
+    @UI.lineItem: [{ position: 190, label: 'Last Changed By' }]
+    @UI.identification: [{ position: 190 }]
     @EndUserText.label: 'Last Changed By'         
     Lastchangedby;
     

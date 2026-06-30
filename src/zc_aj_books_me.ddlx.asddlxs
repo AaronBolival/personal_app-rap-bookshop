@@ -10,6 +10,7 @@ annotate entity ZC_AJ_BOOKS with
 {
   @UI.facet: [{ position: 10, label: 'Books', purpose: #STANDARD, type: #IDENTIFICATION_REFERENCE }]
 
+
   @UI.lineItem: [{ position: 10, label: 'Book ID' }]
   @UI.identification: [{ position: 10 }]
   @EndUserText.label: 'Book ID'
@@ -20,8 +21,13 @@ annotate entity ZC_AJ_BOOKS with
   @EndUserText.label: 'Author ID'
   Authorid;
 
-  @UI.lineItem: [{ position: 30, label: 'Genre ID' }]
+  @UI.lineItem: [{ position: 30, label: 'Author Name' }]
   @UI.identification: [{ position: 30 }]
+  @EndUserText.label: 'Author Name'
+  AuthorName;
+  
+  @UI.lineItem: [{ position: 40, label: 'Genre ID' }]
+  @UI.identification: [{ position: 40 }]
   @EndUserText.label: 'Genre ID'
   @Consumption.valueHelpDefinition: [{
       entity: {
@@ -32,33 +38,33 @@ annotate entity ZC_AJ_BOOKS with
   }]
   Genreid;
 
-  @UI.lineItem: [{ position: 40, label: 'Genre' }]
-  @UI.identification: [{ position: 40 , value: 'GenreName'  }]
+  @UI.lineItem: [{ position: 50, label: 'Genre' }]
+  @UI.identification: [{ position: 50 , value: 'GenreName'  }]
   @EndUserText.label: 'Genre'  
   GenreName;
 
-  @UI.lineItem: [{ position: 50, label: 'Title' }]
-  @UI.identification: [{ position: 50 }]
+  @UI.lineItem: [{ position: 60, label: 'Title' }]
+  @UI.identification: [{ position: 60 }]
   @EndUserText.label: 'Title'
   Title;
 
-  @UI.lineItem: [{ position: 60, label: 'Description' }]
-  @UI.identification: [{ position: 60 }]
+  @UI.lineItem: [{ position: 70, label: 'Description' }]
+  @UI.identification: [{ position: 70 }]
   @EndUserText.label: 'Description'
   Description;
 
-  @UI.lineItem: [{ position: 70, label: 'Stock' }]
-  @UI.identification: [{ position: 70 }]
+  @UI.lineItem: [{ position: 80, label: 'Stock' }]
+  @UI.identification: [{ position: 80 }]
   @EndUserText.label: 'Stock'
   Stock;
 
-  @UI.lineItem: [{ position: 80, label: 'Price' }]
-  @UI.identification: [{ position: 80 }]
+  @UI.lineItem: [{ position: 90, label: 'Price' }]
+  @UI.identification: [{ position: 90 }]
   @EndUserText.label: 'Price'
   Price;
 
-  @UI.lineItem: [{ position: 90, label: 'Currency' }]
-  @UI.identification: [{ position: 90 }]
+  @UI.lineItem: [{ position: 100, label: 'Currency' }]
+  @UI.identification: [{ position: 100 }]
   @EndUserText.label: 'Currency'
   @Search.defaultSearchElement: true
   @Consumption.valueHelpDefinition: [{
@@ -69,40 +75,40 @@ annotate entity ZC_AJ_BOOKS with
   }]
   Currency;
   
-  @UI.lineItem: [{ position: 100, label: 'Currency Symbol' }]
+  @UI.lineItem: [{ position: 110, label: 'Currency Symbol' }]
   @EndUserText.label: 'Currency Symbol'
   CurrencySymbol;
   
-  @UI.lineItem: [{ position: 110, label: 'Image Link' }]
-  @UI.identification: [{ position: 110 }]
+  @UI.lineItem: [{ position: 120, label: 'Image Link' }]
+  @UI.identification: [{ position: 120 }]
   @EndUserText.label: 'Image Link'
   ImgLink;
   
-  @UI.lineItem: [{ position: 120, label: 'Featured' }]
+  @UI.lineItem: [{ position: 130, label: 'Featured' }]
   @EndUserText.label: 'Featured'  
-  @UI.identification: [{ position: 120 }]
+  @UI.identification: [{ position: 130 }]
   Featured;
   
-  @UI.lineItem: [{ position: 130, label: 'Created At' }]
-  @UI.identification: [{ position: 130 }]
+  @UI.lineItem: [{ position: 140, label: 'Created At' }]
+  @UI.identification: [{ position: 140 }]
   @UI.hidden: true
   @EndUserText.label: 'Created At'
   CreatedAt;
 
-  @UI.lineItem: [{ position: 140, label: 'Created By' }]
-  @UI.identification: [{ position: 140 }]
+  @UI.lineItem: [{ position: 150, label: 'Created By' }]
+  @UI.identification: [{ position: 150 }]
   @UI.hidden: true
   @EndUserText.label: 'Created By'
   CreatedBy;
 
-  @UI.lineItem: [{ position: 150, label: 'Last Changed At' }]
-  @UI.identification: [{ position: 150 }]
+  @UI.lineItem: [{ position: 160, label: 'Last Changed At' }]
+  @UI.identification: [{ position: 160 }]
   @UI.hidden: true
   @EndUserText.label: 'Last Changed At'
   Lastchangedat;
 
-  @UI.lineItem: [{ position: 160, label: 'Last Changed By' }]
-  @UI.identification: [{ position: 160 }]
+  @UI.lineItem: [{ position: 170, label: 'Last Changed By' }]
+  @UI.identification: [{ position: 170 }]
   @UI.hidden: true
   @EndUserText.label: 'Last Changed By'
   Lastchangedby;
